@@ -1,0 +1,30 @@
+:host {
+    display: flex;
+    flex-grow: 1;
+    justify-content: end;
+    align-items: center;
+    gap: 1rem;
+}
+
+svg {
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+:host::ng-deep{
+    .dropdown-item{
+        padding-left: 0.5rem !important;
+        display: flex;
+        gap: 0.5rem;
+    }
+}
+
+.hamburger {
+    margin-right: auto;
+}
+
+@media  (min-width: 992px) {
+    .hamburger {
+        display: none;
+    }
+}

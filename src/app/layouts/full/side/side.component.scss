@@ -1,0 +1,23 @@
+ul {
+    display: flex;
+    flex-direction: column;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    gap: 1rem;
+}
+
+img{
+    width: 2rem;
+    margin-bottom: 2rem;
+}
+
+a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-container {
+    height: 100vh;
+    overflow-y: auto;
+}

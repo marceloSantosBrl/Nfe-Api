@@ -1,0 +1,8 @@
+<div class="side"><app-side></app-side></div>
+<div class="aside">
+    <div class="nav shadow-lg"><app-nav (hamburgerClick)="handleHamburger(content)"></app-nav></div>
+    <div class="content bg-secondary-subtle"><ng-content></ng-content></div>
+</div>
+<ng-template #content let-offCanvas class="d-lg-none">
+<app-side></app-side>
+</ng-template>

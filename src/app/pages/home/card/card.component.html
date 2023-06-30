@@ -1,0 +1,11 @@
+<div class="card">
+    <div class="card-body">
+      <p class="card-text">Produtos Vendidos</p>
+      <div class="d-flex gap-3">
+        <h5 class="card-title fs-1">150</h5>
+        <img *ngIf="isGrowing" src="/assets/graph-up-arrow.svg" class="filter-green" alt="seta para cima">
+        <img *ngIf="!isGrowing" src="/assets/graph-down-arrow.svg" class="filter-red" alt="seta para baixo">
+      </div>
+      <h6 class="card-subtitle mb-2 text-body-secondary">Aumento de 90%</h6>
+    </div>
+</div>

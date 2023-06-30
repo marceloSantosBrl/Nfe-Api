@@ -1,0 +1,316 @@
+<div class="card m-5 shadow-lg">
+  <h2 class="card-header">Cadastro de Cliente</h2>
+  <form (ngSubmit)="submitHandler()" [formGroup]="formulario" class="d-flex flex-wrap gap-3 card-body">
+    <div class="form-floating">
+      <input
+        formControlName="nome"
+        type="text"
+        class="form-control form-control-sm"
+        id="nome">
+      <label
+        for="nome">
+        Nome
+      </label>
+      <p
+        [ngClass]="{'d-none': getFeedbackState(formulario.controls['nome'])}"
+        class="form-text invalid">
+        Nome Inválido
+      </p>
+    </div>
+    <div class="form-floating">
+      <select
+        formControlName="tipoPessoa"
+        id="tipoPessoa"
+        class="form-select">
+        <option value="0" selected>Pessoa Fisica</option>
+        <option value="1">Pessoa Jurídica</option>
+        <option value="2">Pessoa Estrangeira</option>
+      </select>
+      <label
+        for="tipoPessoa">
+        Tipo de Pessoa
+      </label>
+      <p
+        [ngClass]="{'d-none': getFeedbackState(formulario.controls['tipoPessoa'])}"
+        class="form-text invalid">
+        Tipo de Pessoa Inválida
+      </p>
+    </div>
+    <div class="form-floating">
+      <input
+        formControlName="documentoId"
+        type="text"
+        class="form-control form-control-sm"
+        id="documentoId">
+      <label
+        for="documentoId">
+        Documento de Identificação
+      </label>
+      <p
+        [ngClass]="{'d-none': getFeedbackState(formulario.controls['documentoId'])}"
+        class="form-text invalid">
+        Documento de Identificação inválido
+      </p>
+    </div>
+    <div class="form-floating">
+      <input
+        formControlName="nomeFantasia"
+        type="text"
+        class="form-control form-control-sm"
+        id="nomeFantasia">
+      <label
+        for="nomeFantasia">
+        Nome Fantasia
+      </label>
+      <p
+        [ngClass]="{'d-none': getFeedbackState(formulario.controls['nomeFantasia'])}"
+        class="form-text invalid">
+        Nome Fantasia inválido
+      </p>
+    </div>
+    <div class="form-floating">
+      <input
+        formControlName="email"
+        type="email"
+        class="form-control form-control-sm"
+        id="email">
+      <label
+        for="email">
+        Email
+      </label>
+      <p
+        [ngClass]="{'d-none': getFeedbackState(formulario.controls['email'])}"
+        class="form-text invalid">
+        Email Inválido
+      </p>
+    </div>
+    <div class="form-floating">
+      <input
+        formControlName="telefoneComercial"
+        type="text"
+        class="form-control form-control-sm"
+        id="telefoneComercial">
+      <label
+        for="telefoneComercial">
+        Telefone Comercial
+      </label>
+      <p
+        [ngClass]="{'d-none': getFeedbackState(formulario.controls['telefoneComercial'])}"
+        class="form-text invalid">
+        Telefone Inválido
+      </p>
+    </div>
+    <div class="form-floating">
+      <input
+        formControlName="telefoneCelular"
+        type="text"
+        class="form-control form-control-sm"
+        id="telefoneCelular">
+      <label
+        for="telefoneCelular">
+        Telefone Celular
+      </label>
+      <p
+        [ngClass]="{'d-none': getFeedbackState(formulario.controls['telefoneCelular'])}"
+        class="form-text invalid">
+        Telefone Inválido
+      </p>
+    </div>
+    <div class="form-floating">
+      <input
+        formControlName="razaoSocial"
+        type="text"
+        class="form-control form-control-sm"
+        id="razaoSocial">
+      <label
+        for="razaoSocial">
+        Razão Social
+      </label>
+      <p
+        [ngClass]="{'d-none': getFeedbackState(formulario.controls['razaoSocial'])}"
+        class="form-text invalid">
+        Razão Social Inválida
+      </p>
+    </div>
+    <div class="form-floating">
+      <input
+        formControlName="inscricaoEstadual"
+        type="text"
+        class="form-control form-control-sm"
+        id="inscricaoEstadual">
+      <label
+        for="inscricaoEstadual">
+        Inscrição Estadual
+      </label>
+      <p
+        [ngClass]="{'d-none': getFeedbackState(formulario.controls['inscricaoEstadual'])}"
+        class="form-text invalid">
+      Inscricão Estadual inválida
+      </p>
+    </div>
+    <div class="form-floating">
+      <input
+        formControlName="inscricaoMunicipal"
+        type="text"
+        class="form-control form-control-sm"
+        id="inscricaoMunicipal">
+      <label
+        for="inscricaoMunicipal">
+        Inscrição Municipal
+      </label>
+      <p
+        [ngClass]="{'d-none': getFeedbackState(formulario.controls['inscricaoMunicipal'])}"
+        class="form-text invalid">
+      Inscricão Municipal inválida
+      </p>
+    </div>
+    <div class="form-floating">
+      <input
+        formControlName="inscricaoSuframa"
+        type="text"
+        class="form-control form-control-sm"
+        id="inscricaoSuframa">
+      <label
+        for="inscricaoSuframa">
+        Inscrição Suframa
+      </label>
+      <p
+        [ngClass]="{'d-none': getFeedbackState(formulario.controls['inscricaoSuframa'])}"
+        class="form-text invalid">
+      Inscricão Suframa inválida
+      </p>
+    </div>
+    <div class="form-floating">
+      <input
+        formControlName="pais"
+        type="text"
+        class="form-control form-control-sm"
+        id="pais">
+      <label
+        for="pais">
+        País
+      </label>
+      <p
+        [ngClass]="{'d-none': getFeedbackState(formulario.controls['pais'])}"
+        class="form-text invalid">
+      Pais inválido
+      </p>
+    </div>
+    <div class="form-floating">
+      <input
+        formControlName="cep"
+        type="text"
+        class="form-control form-control-sm"
+        id="cep">
+      <label
+        for="cep">
+        Cep
+      </label>
+      <p
+        [ngClass]="{'d-none': getFeedbackState(formulario.controls['cep'])}"
+        class="form-text invalid">
+      Cep inválido
+      </p>
+    </div>
+    <div class="form-floating">
+      <input
+        formControlName="endereco"
+        type="text"
+        class="form-control form-control-sm"
+        id="endereco">
+      <label
+        for="endereco">
+        Endereço
+      </label>
+      <p
+        [ngClass]="{'d-none': getFeedbackState(formulario.controls['endereco'])}"
+        class="form-text invalid">
+      Endereço inválido
+      </p>
+    </div>
+    <div class="form-floating">
+      <input
+        formControlName="numero"
+        type="text"
+        class="form-control form-control-sm"
+        id="numero">
+      <label
+        for="numero">
+        Número
+      </label>
+      <p
+        [ngClass]="{'d-none': getFeedbackState(formulario.controls['numero'])}"
+        class="form-text invalid">
+      Numero inválido
+      </p>
+    </div>
+    <div class="form-floating">
+      <input
+        formControlName="cidade"
+        type="text"
+        class="form-control form-control-sm"
+        id="cidade">
+      <label
+        for="cidade">
+        Cidade
+      </label>
+      <p
+        [ngClass]="{'d-none': getFeedbackState(formulario.controls['cidade'])}"
+        class="form-text invalid">
+      Cidade inválida
+      </p>
+    </div>
+    <div class="form-floating">
+      <input
+        formControlName="bairro"
+        type="text"
+        class="form-control form-control-sm"
+        id="bairro">
+      <label
+        for="bairro">
+        Bairro
+      </label>
+      <p
+        [ngClass]="{'d-none': getFeedbackState(formulario.controls['bairro'])}"
+        class="form-text invalid">
+      Bairro inválido
+      </p>
+    </div>
+    <div class="form-floating">
+      <input
+        formControlName="complemento"
+        type="text"
+        class="form-control form-control-sm"
+        id="complemento">
+      <label
+        for="complemento">
+        Complemento
+      </label>
+      <p
+        [ngClass]="{'d-none': getFeedbackState(formulario.controls['complemento'])}"
+        class="form-text invalid">
+      Complemento inválido
+      </p>
+    </div>
+    <div class="form-floating">
+      <input
+        formControlName="observacao"
+        type="text"
+        class="form-control form-control-sm"
+        id="observacao">
+      <label
+        for="observacao">
+        Observação
+      </label>
+      <p
+        [ngClass]="{'d-none': getFeedbackState(formulario.controls['complemento'])}"
+        class="form-text invalid">
+      Observação inválida
+      </p>
+    </div>
+    <div class="d-flex p-5 justify-content-between w-100 gap-2">
+      <button class="btn btn-primary" [disabled]="formulario.invalid">Enviar</button>
+      <button type="button" class="btn btn-secondary">Cancelar</button>
+    </div>
+  </form>
+</div>

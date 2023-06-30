@@ -1,0 +1,28 @@
+:host {
+    display: flex;
+    height: 100%;
+}
+
+.aside {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav {
+    flex-basis: 3rem;
+}
+
+.content {
+    flex-grow: 1;
+}
+
+.side {
+    flex-basis: calc(100%/6);
+}
+
+@media (max-width: 992px){
+    .side {
+        display: none;
+    }
+}

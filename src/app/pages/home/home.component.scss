@@ -1,0 +1,16 @@
+
+// @import 'ag-grid-community/styles/ag-grid.sass';
+// @import 'ag-grid-community/styles/ag-theme-alpine.scss';
+.home-container {
+    height: 100%;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    padding: 3rem;
+}
+
+.top-container {
+    display: block;
+    height: calc(100vh - 3rem);
+    overflow-y: auto;
+}

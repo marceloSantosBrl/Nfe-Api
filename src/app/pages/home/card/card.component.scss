@@ -1,0 +1,11 @@
+:host {
+    padding: 0;
+}
+
+.filter-green {
+    filter: invert(40%) sepia(38%) saturate(872%) hue-rotate(100deg) brightness(94%) contrast(87%);
+}
+
+.filter-red {
+    filter: invert(27%) sepia(90%) saturate(2235%) hue-rotate(336deg) brightness(90%) contrast(91%);
+}
