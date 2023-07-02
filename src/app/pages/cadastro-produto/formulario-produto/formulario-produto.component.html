@@ -1,1 +1,385 @@
-
+<div class="card m-5">
+  <h2 class="card-header">Cadastro Produto</h2>
+  <form
+    [formGroup]="formulario"
+    (ngSubmit)="submitHandler()"
+    class="card-body d-flex flex-wrap gap-3">
+    <div class="form-floating">
+      <input
+        formControlName="nome"
+        type="text"
+        class="form-control form-control-sm"
+        id="nome">
+      <label
+        for="nome">
+        Nome
+      </label>
+      <p
+        [ngClass]="{'d-none': getFeedbackState(formulario.controls['nome'])}"
+        class="form-text invalid">
+        Nome Inválido
+      </p>
+    </div>
+    <div class="form-floating">
+      <input
+        formControlName="tipo"
+        type="text"
+        class="form-control form-control-sm"
+        id="tipo">
+      <label
+        for="tipo">
+        Tipo de Produto
+      </label>
+      <p
+        [ngClass]="{'d-none': getFeedbackState(formulario.controls['tipo'])}"
+        class="form-text invalid">
+        Tipo de Produto Inválido
+      </p>
+    </div>
+    <div class="form-floating">
+      <input
+        formControlName="precoVenda"
+        type="text"
+        class="form-control form-control-sm"
+        id="precoVenda">
+      <label
+        for="precoVenda">
+        Preço de Venda
+      </label>
+      <p
+        [ngClass]="{'d-none': getFeedbackState(formulario.controls['precoVenda'])}"
+        class="form-text invalid">
+        Preço de Venda Inválido
+      </p>
+    </div>
+    <div class="form-floating">
+      <select
+        formControlName="unidade"
+        id="unidade"
+        class="form-select">
+        <option value="0">KG</option>
+        <option value="1">LT</option>
+        <option value="2" selected>UN</option>
+        <option value="3">MT</option>
+        <option value="4">M2</option>
+        <option value="5">M3</option>
+        <option value="4">PR</option>
+        <option value="5">KW</option>
+      </select>
+      <label
+        for="unidade">
+        Unidade
+      </label>
+      <p
+        [ngClass]="{'d-none': getFeedbackState(formulario.controls['unidade'])}"
+        class="form-text invalid">
+        Unidade Inválida
+      </p>
+    </div>
+    <div class="form-floating">
+      <select
+        formControlName="condicao"
+        id="condicao"
+        class="form-select">
+        <option value="0">Não Especificado</option>
+        <option value="1" selected>Novo</option>
+        <option value="2">Usado</option>
+        <option value="3">Recondicionado</option>
+      </select>
+      <label
+        for="condicao">
+        Condição
+      </label>
+      <p
+        [ngClass]="{'d-none': getFeedbackState(formulario.controls['condicao'])}"
+        class="form-text invalid">
+        Condição Inválida
+      </p>
+    </div>
+    <div class="form-floating">
+      <input
+        formControlName="marca"
+        type="text"
+        class="form-control form-control-sm"
+        id="marca">
+      <label
+        for="marca">
+        Marca
+      </label>
+      <p
+        [ngClass]="{'d-none': getFeedbackState(formulario.controls['marca'])}"
+        class="form-text invalid">
+        Marca do Produto Inválido
+      </p>
+    </div>
+    <div class="form-floating">
+      <select
+        formControlName="producao"
+        id="producao"
+        class="form-select">
+        <option value="0" selected>Própria</option>
+        <option value="1">Terceiros</option>
+      </select>
+      <label
+        for="producao">
+        Produção
+      </label>
+      <p
+        [ngClass]="{'d-none': getFeedbackState(formulario.controls['producao'])}"
+        class="form-text invalid">
+        Produção Inválida
+      </p>
+    </div>
+    <div class="input-group datepicker">
+      <input
+        class="form-control"
+        placeholder="yyyy-mm-dd"
+        name="dp"
+        ngbDatepicker
+        #d="ngbDatepicker"
+      />
+      <button class="btn btn-primary bi bi-calendar3" (click)="d.toggle()" type="button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar"
+             viewBox="0 0 16 16">
+          <path
+            d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+        </svg>
+      </button>
+    </div>
+    <div class="form-floating">
+      <input
+        formControlName="pesoLiquido"
+        type="number"
+        class="form-control form-control-sm"
+        id="pesoLiquido">
+      <label
+        for="pesoLiquido">
+        Peso Líquido
+      </label>
+      <p
+        [ngClass]="{'d-none': getFeedbackState(formulario.controls['pesoLiquido'])}"
+        class="form-text invalid">
+        Peso Líquido Inválido
+      </p>
+    </div>
+    <div class="form-floating">
+      <input
+        formControlName="pesoBruto"
+        type="number"
+        class="form-control form-control-sm"
+        id="pesoBruto">
+      <label
+        for="pesoBruto">
+        Peso Bruto
+      </label>
+    </div>
+    <div class="form-floating">
+      <input
+        formControlName="largura"
+        type="number"
+        class="form-control form-control-sm"
+        id="largura">
+      <label
+        for="largura">
+        Largura
+      </label>
+    </div>
+    <div class="form-floating">
+      <input
+        formControlName="comprimento"
+        type="number"
+        class="form-control form-control-sm"
+        id="comprimento">
+      <label
+        for="comprimento">
+        Comprimento
+      </label>
+    </div>
+    <div class="form-floating">
+      <input
+        formControlName="altura"
+        type="number"
+        class="form-control form-control-sm"
+        id="altura">
+      <label
+        for="altura">
+        Altura
+      </label>
+    </div>
+    <div class="form-floating">
+      <input
+        formControlName="volume"
+        type="number"
+        class="form-control form-control-sm"
+        id="volume">
+      <label
+        for="volume">
+        Volume
+      </label>
+    </div>
+    <div class="form-floating">
+      <input
+        formControlName="itemCaixa"
+        type="number"
+        class="form-control form-control-sm"
+        id="itemCaixa">
+      <label
+        for="itemCaixa">
+        Itens por Caixa
+      </label>
+    </div>
+    <div class="form-floating">
+      <input
+        formControlName="gtin"
+        type="number"
+        class="form-control form-control-sm"
+        id="gtin">
+      <label
+        for="gtin">
+        GTIN
+      </label>
+    </div>
+    <div class="form-floating">
+      <input
+        formControlName="gtinTributario"
+        type="number"
+        class="form-control form-control-sm"
+        id="gtinTributario">
+      <label
+        for="gtinTributario">
+        GTIN Tributario
+      </label>
+    </div>
+    <div class="form-floating">
+      <input
+        formControlName="descricao"
+        type="number"
+        class="form-control form-control-sm"
+        id="descricao">
+      <label
+        for="descricao">
+        Descrição
+      </label>
+    </div>
+    <div class="form-floating">
+      <input
+        formControlName="estoqueMinimo"
+        type="number"
+        class="form-control form-control-sm"
+        id="estoqueMinimo">
+      <label
+        for="estoqueMinimo">
+        Estoque Mínimo
+      </label>
+    </div>
+    <div class="form-floating">
+      <input
+        formControlName="estoqueMinimo"
+        type="number"
+        class="form-control form-control-sm"
+        id="estoqueMaximo">
+      <label
+        for="estoqueMaximo">
+        Estoque Máximo
+      </label>
+    </div>
+    <div class="form-floating">
+      <input
+        formControlName="diasCrossdocking"
+        type="number"
+        class="form-control form-control-sm"
+        id="diasCrossdocking">
+      <label
+        for="diasCrossdocking">
+        Dias Crossdocking
+      </label>
+    </div>
+    <div class="form-floating">
+      <input
+        formControlName="origem"
+        type="number"
+        class="form-control form-control-sm"
+        id="origem">
+      <label
+        for="origem">
+        Origem
+      </label>
+    </div>
+    <div class="form-floating">
+      <input
+        formControlName="ncm"
+        type="text"
+        class="form-control form-control-sm"
+        id="ncm">
+      <label
+        for="ncm">
+        NCM
+      </label>
+      <p
+        [ngClass]="{'d-none': getFeedbackState(formulario.controls['ncm'])}"
+        class="form-text invalid">
+        NCM Inválido
+      </p>
+    </div>
+    <div class="form-floating">
+      <input
+        formControlName="cest"
+        type="text"
+        class="form-control form-control-sm"
+        id="cest">
+      <label
+        for="cest">
+        CEST
+      </label>
+      <p
+        [ngClass]="{'d-none': getFeedbackState(formulario.controls['cest'])}"
+        class="form-text invalid">
+        Cest Inválido
+      </p>
+    </div>
+    <div class="form-floating">
+      <input
+        formControlName="aliquotaTributo"
+        type="number"
+        class="form-control form-control-sm"
+        id="aliquotaTributo">
+      <label
+        for="aliquotaTributo">
+        Aliquota Tributária
+      </label>
+    </div>
+    <div class="form-floating">
+      <input
+        formControlName="icmsBaseRetencao"
+        type="number"
+        class="form-control form-control-sm"
+        id="icmsBaseRetencao">
+      <label
+        for="icmsBaseRetencao">
+        Icms Base Retenção
+      </label>
+    </div>
+    <div class="form-floating">
+      <input
+        formControlName="icmsStrRetencao"
+        type="number"
+        class="form-control form-control-sm"
+        id="icmsStrRetencao">
+      <label
+        for="icmsStrRetencao">
+        Icms STR Retenção
+      </label>
+    </div>
+    <div
+    class="w-100 d-flex justify-content-around g-2">
+      <button
+        class="btn btn-primary align-self-end">Enviar
+      </button>
+      <button
+      class="btn btn-secondary align-self-end">
+        Cancelar
+      </button>
+    </div>
+  </form>
+  <!--TODO: Terminar formulario-->
+</div>
