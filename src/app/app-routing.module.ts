@@ -27,6 +27,11 @@ const routes: Routes = [
     loadComponent: () => import('./pages/cadastro-produto/cadastro-produto.component')
       .then(m => m.CadastroProdutoComponent),
   },
+  {
+    path: 'cadastro-venda',
+    loadComponent: () => import('./pages/cadastro-venda/cadastro-venda.component')
+      .then(m => m.CadastroVendaComponent),
+  }
 ];
 
 @NgModule({

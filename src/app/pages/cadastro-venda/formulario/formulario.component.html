@@ -1,40 +1,69 @@
-<form>
-  <label for="cliente">Cliente</label>
-  <input type="text" id="cliente">
-  <label for="cpf">CPF</label>
-  <input type="text" id="cpf">
-  <label for="codigoPromocional">Código Promocional</label>
-  <input type="text" id="codigoPromocional">
-  <h2>Pagamento</h2>
-  <select name="formaDePagamento">
-    <option value="0">Espécie</option>
-    <option value="1">Mastercard Débito</option>
-    <option value="2">Mastercard Crédito à vista</option>
-    <option value="3">Mastercard Crédito Parcelado</option>
-    <option value="4">Visa Débito</option>
-    <option value="5">Visa Crédito à vista</option>
-    <option value="6">Visa Crédito Parcelado</option>
-    <option value="7">Elo Débito</option>
-    <option value="8">Elo Crédito à vista</option>
-    <option value="9">Elo Crédito Parcelado</option>
-  </select>
-  <select name="numeroParcelas" id="nuemeroParcelas">
-    <option value="2">2x</option>
-    <option value="3">3x</option>
-    <option value="4">4x</option>
-    <option value="5">5x</option>
-    <option value="6">6x</option>
-    <option value="7">7x</option>
-    <option value="8">8x</option>
-    <option value="9">9x</option>
-    <option value="10">10x</option>
-    <option value="11">11x</option>
-    <option value="12">13x</option>
-  </select>
-  <label for="valorDinheiro">Valor em Dinheiro</label>
-  <input type="number" id="valorDinheiro">
-  <label for="desconto">Desconto</label>
-  <input type="number" id="desconto">
-  <label for="codigoBarras">Código de Barras</label>
-  <input type="text" id="codigoBarras">
+<form class="d-flex flex-column gap-3">
+  <div class="card shadow-lg">
+    <div class="card-header">
+      <h2 class="fs-3">Dados</h2>
+    </div>
+    <div class="card-body d-flex gap-3 flex-wrap">
+      <div>
+        <label for="cliente" class="form-label">Cliente</label>
+        <input type="text" id="cliente" class="form-control form-control-sm">
+      </div>
+      <div>
+        <label for="cpf" class="form-label">CPF</label>
+        <input type="text" id="cpf" class="form-control form-control-sm">
+      </div>
+      <div>
+        <label for="codigoPromocional" class="form-label">Código Promocional</label>
+        <input type="text" id="codigoPromocional" class="form-control form-control-sm">
+      </div>
+    </div>
+  </div>
+  <div class="card shadow-lg">
+    <div class="card-header">
+      <h2 class="fs-3">Pagamento</h2>
+    </div>
+    <div class="card-body d-flex flex-wrap gap-3">
+      <select name="formaDePagamento" [formControl]="formaPagamento"
+              (click)="obterParcelasDisplay(formaPagamento.value!)"
+              class="form-select form-select-sm">
+        <option value="0">Espécie</option>
+        <option value="1">Mastercard Débito</option>
+        <option value="2">Mastercard Crédito à vista</option>
+        <option value="3">Mastercard Crédito Parcelado</option>
+        <option value="4">Visa Débito</option>
+        <option value="5">Visa Crédito à vista</option>
+        <option value="6">Visa Crédito Parcelado</option>
+        <option value="7">Elo Débito</option>
+        <option value="8">Elo Crédito à vista</option>
+        <option value="9">Elo Crédito Parcelado</option>
+      </select>
+      <select name="numeroParcelas" id="nuemeroParcelas"
+              [ngClass]="{'d-none': !mostrarDisplayParcela}"
+              class="form-select form-select-sm">
+        <option value="2">2x</option>
+        <option value="3">3x</option>
+        <option value="4">4x</option>
+        <option value="5">5x</option>
+        <option value="6">6x</option>
+        <option value="7">7x</option>
+        <option value="8">8x</option>
+        <option value="9">9x</option>
+        <option value="10">10x</option>
+        <option value="11">11x</option>
+        <option value="12">12x</option>
+      </select>
+      <div>
+        <label for="valorDinheiro" class="form-label">Valor em Dinheiro</label>
+        <input type="number" id="valorDinheiro"
+               [formControl]="amountControl" (keyup)="updateAmount()"
+               class="form-control form-control-sm">
+      </div>
+      <div>
+        <label for="desconto" class="form-label">Desconto</label>
+        <input type="number" id="desconto"
+               [formControl]="discountControl" (keyup)="updateDiscount()"
+               class="form-control form-control-sm">
+      </div>
+    </div>
+  </div>
 </form>
