@@ -31,6 +31,11 @@ const routes: Routes = [
     path: 'cadastro-venda',
     loadComponent: () => import('./pages/cadastro-venda/cadastro-venda.component')
       .then(m => m.CadastroVendaComponent),
+  },
+  {
+    path: 'listagem-cliente',
+    loadComponent: () => import('./pages/listagem-clientes/listagem-clientes.component')
+      .then(m => m.ListagemClientesComponent),
   }
 ];
 
