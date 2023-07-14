@@ -1,6 +1,24 @@
 <app-full>
-  <p>Listagem Clientes</p>
-  <div class="card p-3 m-2">
-    <app-tabela-clientes></app-tabela-clientes>
+  <div class="listagem-container mt-3">
+    <div class="cards-container mb-3">
+      <app-card-cliente
+        titulo = "Total Clientes"
+        textoBotao="Adicionar Cliente"></app-card-cliente>
+      <app-card-cliente
+        [variacao]="200"
+        [isGrowing] = 'true'
+        subtexto="Aumento de 30%"
+        [titulo]="'Clientes Pagadores'"
+        [classeBotao]="'btn-success'"
+        [textoBotao]="'Adicionar Pagamento'"></app-card-cliente>
+      <app-card-cliente
+        [variacao]="20"
+        [isGrowing] = 'false'
+        subtexto="Redução de 30%"
+        [titulo]="'Clientes Devedores'"
+        [classeBotao]="'btn-danger'"
+        [textoBotao]="'Verificar clientes'"></app-card-cliente>
+    </div>
+    <app-tabela-clientes class="bg-white p-3 rounded-2 shadow-lg"></app-tabela-clientes>
   </div>
 </app-full>

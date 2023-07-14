@@ -1,0 +1,15 @@
+.listagem-container {
+  display:grid;
+  grid-template-columns: 2.5% 95% 2.5%;
+}
+
+.cards-container {
+  grid-column: 2;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+app-tabela-clientes {
+  grid-column: 2;
+}

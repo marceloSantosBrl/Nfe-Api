@@ -11,24 +11,37 @@ import {AgGridModule} from "ag-grid-angular";
   encapsulation: ViewEncapsulation.ShadowDom
 })
 export class TabelaClientesComponent {
-  @Input() columnDef: any = [
-    // headerName: 'Vendas',
-    // children: [
-      {field: 'nomeProduto'},
-      {field: 'valorUnitario'},
-      {field: 'quantidade'},
-      {field: 'valorTotal'},
-      {field: 'data'}
-    // ]
-  ]
-
+@Input() columnDef: any = [{
+    headerName: 'Clientes',
+    children: [
+      {field: 'nome'},
+      {field: 'email'},
+      {field: 'telefone'},
+      {field: 'dataDeCadastro'},
+      {field: 'cidade'},
+    ]
+  }]
 
   @Input() rowData: any = [
-    {nomeProduto: 'Colgate', valorUnitario: 20, quantidade: 40, valorTotal: 2020, data: new Date()},
-    {nomeProduto: 'Colgate', valorUnitario: 20, quantidade: 40, valorTotal: 2020, data: new Date()},
-    {nomeProduto: 'Colgate', valorUnitario: 20, quantidade: 40, valorTotal: 2020, data: new Date()},
-    {nomeProduto: 'Colgate', valorUnitario: 20, quantidade: 40, valorTotal: 2020, data: new Date()},
-    {nomeProduto: 'Colgate', valorUnitario: 20, quantidade: 40, valorTotal: 2020, data: new Date()},
-    {nomeProduto: 'Colgate', valorUnitario: 20, quantidade: 40, valorTotal: 2020, data: new Date()},
+    {nome: 'Marcelo Santos', email: 'marcelo@exemplo.com', telefone: '(99)99999-9999', dataDeCadastro: new Date(),
+      cidade: 'Senhor do Bonfim'},
+    {nome: 'Marcelo Santos', email: 'marcelo@exemplo.com', telefone: '(99)99999-9999', dataDeCadastro: new Date(),
+      cidade: 'Senhor do Bonfim'},
+    {nome: 'Marcelo Santos', email: 'marcelo@exemplo.com', telefone: '(99)99999-9999', dataDeCadastro: new Date(),
+      cidade: 'Senhor do Bonfim'},
+    {nome: 'Marcelo Santos', email: 'marcelo@exemplo.com', telefone: '(99)99999-9999', dataDeCadastro: new Date(),
+      cidade: 'Senhor do Bonfim'},
+    {nome: 'Marcelo Santos', email: 'marcelo@exemplo.com', telefone: '(99)99999-9999', dataDeCadastro: new Date(),
+      cidade: 'Senhor do Bonfim'},
+    {nome: 'Marcelo Santos', email: 'marcelo@exemplo.com', telefone: '(99)99999-9999', dataDeCadastro: new Date(),
+      cidade: 'Senhor do Bonfim'},
+    {nome: 'Marcelo Santos', email: 'marcelo@exemplo.com', telefone: '(99)99999-9999', dataDeCadastro: new Date(),
+      cidade: 'Senhor do Bonfim'},
+    {nome: 'Marcelo Santos', email: 'marcelo@exemplo.com', telefone: '(99)99999-9999', dataDeCadastro: new Date(),
+      cidade: 'Senhor do Bonfim'},
+    {nome: 'Marcelo Santos', email: 'marcelo@exemplo.com', telefone: '(99)99999-9999', dataDeCadastro: new Date(),
+      cidade: 'Senhor do Bonfim'},
+    {nome: 'Marcelo Santos', email: 'marcelo@exemplo.com', telefone: '(99)99999-9999', dataDeCadastro: new Date(),
+      cidade: 'Senhor do Bonfim'},
   ]
 }

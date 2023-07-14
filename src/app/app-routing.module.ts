@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 
 const routes: Routes = [
   {
@@ -18,7 +18,7 @@ const routes: Routes = [
       .then(m => m.SignUpComponent),
   },
   {
-    path:'cadastro-cliente',
+    path: 'cadastro-cliente',
     loadComponent: () => import('./pages/cadastro-cliente/cadastro-cliente.component')
       .then(m => m.CadastroClienteComponent),
   },
@@ -36,6 +36,11 @@ const routes: Routes = [
     path: 'listagem-cliente',
     loadComponent: () => import('./pages/listagem-clientes/listagem-clientes.component')
       .then(m => m.ListagemClientesComponent),
+  },
+  {
+    path: 'listagem-venda',
+    loadComponent: () => import('./pages/listagem-venda/listagem-venda.component')
+      .then(m => m.ListagemVendaComponent),
   }
 ];
 
@@ -43,4 +48,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+}

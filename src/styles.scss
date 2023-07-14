@@ -24,6 +24,9 @@ app-root {
     border: 1px solid red;
 }
 
+router-outlet {
+  display: none !important;
+}
 .ng-invalid.ng-dirty{
   @extend .is-invalid
 }
