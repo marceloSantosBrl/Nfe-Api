@@ -47,7 +47,7 @@
         Preço de Venda
       </label>
       <p
-        [ngClass]="{'d-none': getFeedbackState(formulario.controls['precoVenda'])}"
+        [ngClass]="{'d-none': getFeedbackState(formulario.controls['precoDeVenda'])}"
         class="form-text invalid">
         Preço de Venda Inválido
       </p>
@@ -231,7 +231,7 @@
     <div class="form-floating">
       <input
         formControlName="gtin"
-        type="number"
+        type="text"
         class="form-control form-control-sm"
         id="gtin">
       <label
@@ -242,7 +242,7 @@
     <div class="form-floating">
       <input
         formControlName="gtinTributario"
-        type="number"
+        type="text"
         class="form-control form-control-sm"
         id="gtinTributario">
       <label
@@ -253,7 +253,7 @@
     <div class="form-floating">
       <input
         formControlName="descricao"
-        type="number"
+        type="text"
         class="form-control form-control-sm"
         id="descricao">
       <label
@@ -297,7 +297,7 @@
     <div class="form-floating">
       <input
         formControlName="origem"
-        type="number"
+        type="text"
         class="form-control form-control-sm"
         id="origem">
       <label
@@ -373,10 +373,12 @@
     <div
     class="w-100 d-flex justify-content-around g-2">
       <button
+        [disabled]="formulario.invalid"
         class="btn btn-primary align-self-end">Enviar
       </button>
       <button
-      class="btn btn-secondary align-self-end">
+        type="button"
+        class="btn btn-secondary align-self-end">
         Cancelar
       </button>
     </div>
