@@ -1,5 +1,5 @@
 import {Component, Input, ViewEncapsulation} from '@angular/core';
-import {CommonModule, formatCurrency} from '@angular/common';
+import {CommonModule} from '@angular/common';
 import {AgGridModule} from "ag-grid-angular";
 
 @Component({

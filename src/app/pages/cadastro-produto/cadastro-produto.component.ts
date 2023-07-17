@@ -11,5 +11,7 @@ import {FullComponent} from "../../shared/layouts/full/full.component";
   styleUrls: ['./cadastro-produto.component.scss']
 })
 export class CadastroProdutoComponent {
-
+  public submitHandler(event: any) {
+    console.log(event);
+  }
 }
