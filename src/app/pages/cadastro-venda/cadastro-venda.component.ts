@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import {FormGroup} from "@angular/forms";
 import {FormularioComponent} from "./formulario/formulario.component";
 import {VisorVendasComponent} from "./visor-vendas/visor-vendas.component";
-import {FullComponent} from "../../layouts/full/full.component";
+import {FullComponent} from "../../shared/layouts/full/full.component";
 
 @Component({
   selector: 'app-cadastro-venda',

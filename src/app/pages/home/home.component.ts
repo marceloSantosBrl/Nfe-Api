@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FullComponent } from "../../layouts/full/full.component";
+import { FullComponent } from "../../shared/layouts/full/full.component";
 import { CardComponent } from "./card/card.component";
 import { TableComponent } from "./table/table.component";
 

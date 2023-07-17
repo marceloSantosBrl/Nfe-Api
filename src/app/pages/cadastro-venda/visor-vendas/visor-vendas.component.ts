@@ -1,7 +1,7 @@
 import {AfterContentChecked, Component, OnInit} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormControl, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
-import {ProdutosService} from "../../../services/server-connection/produtos.service";
+import {ProdutosService} from "../../../shared/services/server-connection/produtos.service";
 import {FormCashService} from "../form-cash-service/form-cash.service";
 
 

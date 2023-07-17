@@ -1,0 +1,8 @@
+.table-container {
+    display: grid;
+    grid-template-columns: 5% 90% 5%;
+}
+
+app-tabela-listagem-produto {
+    grid-column: 2;
+}

@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Output} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {getFeedbackState} from "../../functions/ValidatorHelper";
+import {getFeedbackState} from "../../shared/functions/ValidatorHelper";
 
 @Component({
   selector: 'app-sign-up',

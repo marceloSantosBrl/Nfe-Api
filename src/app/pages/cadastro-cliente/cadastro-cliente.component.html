@@ -1,3 +1,19 @@
 <app-full>
-  <app-formulario></app-formulario>
+  <app-formulario
+    (submitClick)="submitHandler($event)"></app-formulario>
 </app-full>
+<ngb-toast
+  *ngIf="showToast"
+  (hidden)="showToast = false"
+  class="toast position-fixed top-0 end-0 mt-3 me-3 bg-success text-light">
+  <div class="toast-header">
+    <p>
+      Cliente Adicionado com sucesso
+    </p>
+  </div>
+  <div class="toast-body">
+    <p>
+      Redirecionando
+    </p>
+  </div>
+</ngb-toast>

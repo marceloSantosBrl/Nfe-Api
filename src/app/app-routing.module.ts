@@ -41,6 +41,11 @@ const routes: Routes = [
     path: 'listagem-venda',
     loadComponent: () => import('./pages/listagem-venda/listagem-venda.component')
       .then(m => m.ListagemVendaComponent),
+  },
+  {
+    path: 'listagem-produto',
+    loadComponent: () => import('./pages/listagem-produto/listagem-produto.component')
+      .then(m => m.ListagemProdutoComponent),
   }
 ];
 

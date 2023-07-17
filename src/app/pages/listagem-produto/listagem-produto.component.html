@@ -1,0 +1,29 @@
+<app-full>
+  <div class="d-flex justify-content-around flex-wrap mt-3">
+    <app-card-generico
+    titulo="Produtos Cadastrados"
+    [variacao]="totalProduto | async"
+    subtexto="aumento de 50%"
+    [isGrowing]="true"
+    textoBotao="Adicionar Produto"
+    classeBotao="btn-primary"
+    (clickBotao)="clickBotaoHandler()"></app-card-generico>
+    <app-card-generico
+    titulo="Produtos Em Estoque"
+    [variacao]="89"
+    [isGrowing]="true"
+    subtexto="aumento de 30%"
+    textoBotao="Adicionar Estoque"
+    classeBotao="btn-success"></app-card-generico>
+    <app-card-generico
+    titulo="Produtos sem Estoque"
+    [variacao]="20"
+    [isGrowing] = "false"
+    subtexto="Diminuição de 20%"
+    textoBotao="Baixa Estoque"
+    classeBotao="btn-danger"></app-card-generico>
+  </div>
+  <div class="table-container mt-3">
+    <app-tabela-listagem-produto></app-tabela-listagem-produto>
+  </div>
+</app-full>

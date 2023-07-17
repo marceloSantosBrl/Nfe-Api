@@ -1,7 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
-import {getFeedbackState} from "../../../functions/ValidatorHelper";
+import {getFeedbackState} from "../../../shared/functions/ValidatorHelper";
 
 @Component({
   selector: 'app-formulario',
@@ -18,13 +18,12 @@ export class FormularioComponent implements OnInit{
   ngOnInit(): void {
     this.formulario = new FormGroup({
       nome: new FormControl<string | undefined>(undefined, Validators.required),
-      tipoPessoa: new FormControl('', Validators.required),
+      tipoPessoa: new FormControl<number>(0, Validators.required),
       documentoId: new FormControl('', Validators.required),
       nomeFantasia: new FormControl(''),
       email: new FormControl('', Validators.email),
       telefoneComercial: new FormControl(''),
       telefoneCelular: new FormControl(''),
-      dataCadastro: new FormControl(''),
       razaoSocial: new FormControl(''),
       inscricaoEstadual: new FormControl(''),
       inscricaoMunicipal: new FormControl(''),
@@ -42,8 +41,10 @@ export class FormularioComponent implements OnInit{
   }
 
   public submitHandler(){
+    let response = {...this.formulario.value};
+    response.tipoPessoa = Number(response.tipoPessoa);
     if (this.formulario.valid) {
-      this.submitClick.emit(this.formulario.value);
+      this.submitClick.emit(response);
     }
   }
 }

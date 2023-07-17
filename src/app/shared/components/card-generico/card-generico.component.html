@@ -1,0 +1,27 @@
+<div class="card shadow-lg p-3">
+  <div class="card-body">
+    <p class="card-text">{{titulo}}</p>
+    <div class="d-flex gap-3 align-items-end">
+      <h5
+        *ngIf="variacao; else vairacaoPlaceholder"
+        class="card-title fs-1">{{variacao}}</h5>
+      <ng-template #vairacaoPlaceholder>
+        <h5 class="card-title fs-1 placeholder-glow">
+          <span class="placeholder">15</span>
+        </h5>
+      </ng-template>
+      <div class="d-flex flex-column">
+        <img *ngIf="isGrowing" ngSrc="/assets/graph-up-arrow.svg" class="filter-green" alt="seta para cima"
+             height="16" width="16">
+        <img *ngIf="!isGrowing" ngSrc="/assets/graph-down-arrow.svg" class="filter-red" alt="seta para baixo"
+             height="16" width="16">
+        <p class="card-subtitle mb-2 text-body-secondary fs-6">{{subtexto}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="card-footer">
+    <button
+      [class]="['btn', 'btn-sm', classeBotao]"
+      (click)="handleClick()">{{textoBotao}}</button>
+  </div>
+</div>

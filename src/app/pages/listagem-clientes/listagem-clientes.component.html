@@ -1,24 +1,28 @@
 <app-full>
   <div class="listagem-container mt-3">
     <div class="cards-container mb-3">
-      <app-card-cliente
+      <app-card-generico
         titulo = "Total Clientes"
-        textoBotao="Adicionar Cliente"></app-card-cliente>
-      <app-card-cliente
-        [variacao]="200"
+        textoBotao="Adicionar Cliente"
+        [variacao]="totalClientes | async"
+        (clickBotao)="clickHandler()"
+        ></app-card-generico>
+      <app-card-generico
         [isGrowing] = 'true'
         subtexto="Aumento de 30%"
         [titulo]="'Clientes Pagadores'"
         [classeBotao]="'btn-success'"
-        [textoBotao]="'Adicionar Pagamento'"></app-card-cliente>
-      <app-card-cliente
+        [textoBotao]="'Adicionar Pagamento'"></app-card-generico>
+      <app-card-generico
         [variacao]="20"
         [isGrowing] = 'false'
         subtexto="Redução de 30%"
         [titulo]="'Clientes Devedores'"
         [classeBotao]="'btn-danger'"
-        [textoBotao]="'Verificar clientes'"></app-card-cliente>
+        [textoBotao]="'Verificar clientes'"></app-card-generico>
     </div>
-    <app-tabela-clientes class="bg-white p-3 rounded-2 shadow-lg"></app-tabela-clientes>
+    <app-tabela-clientes
+      class="bg-white p-3 rounded-2 shadow-lg"
+      [rowData]="rowData | async"></app-tabela-clientes>
   </div>
 </app-full>

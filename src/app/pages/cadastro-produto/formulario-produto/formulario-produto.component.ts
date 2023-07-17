@@ -1,7 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
-import {getFeedbackState} from "../../../functions/ValidatorHelper";
+import {getFeedbackState} from "../../../shared/functions/ValidatorHelper";
 import {NgbDatepicker, NgbInputDatepicker} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
@@ -43,7 +43,7 @@ export class FormularioProdutoComponent implements OnInit{
       comprimento: [undefined],
       altura: [undefined],
       volume: [undefined],
-      itemPorCaixa: [undefined],
+      itemCaixa: [undefined],
       gtin: [''],
       gtinTributario: [''],
       descricao: [''],
@@ -54,7 +54,7 @@ export class FormularioProdutoComponent implements OnInit{
       ncm: ['', Validators.required],
       cest: ['', Validators.required],
       tipoItem: [undefined],
-      aliquotaTributos: [undefined],
+      aliquotaTributo: [undefined],
       icmsBaseRetencao: [undefined],
       icmsStrRetencao: [undefined],
       icmsProprio: [undefined],
