@@ -1,8 +1,8 @@
 ul {
     display: flex;
     flex-direction: column;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     gap: 1rem;
 }
 
@@ -15,6 +15,8 @@ a {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
 }
 
 .nav-container {

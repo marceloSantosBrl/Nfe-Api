@@ -1,10 +1,26 @@
 <app-full>
-    <div class="top-container">
-        <div class="home-container">
-            <app-card class="shadow-md" [isGrowing]="true"></app-card>
-            <app-card class="shadow-md" [isGrowing]="false"></app-card>
-            <app-card class="shadow-md" [isGrowing]="true"></app-card>
-            <app-table></app-table>
-        </div>
-    </div>
+  <div class="main-container">
+    <app-card-generico
+      titulo="Produtos Cadastrados"
+      [variacao]="12"
+      subtexto="Aumento de 40%"
+      [isGrowing]="true"
+      textoBotao="Adicionar Produto"
+      classeBotao="btn-primary"></app-card-generico>
+    <app-card-generico
+      titulo="Produtos Em Estoque"
+      [variacao]="4"
+      [isGrowing]="true"
+      subtexto="Aumento de 300%"
+      textoBotao="Adicionar Estoque"
+      classeBotao="btn-success"></app-card-generico>
+    <app-card-generico
+      titulo="Produtos Sem Estoque"
+      [variacao]="3"
+      [isGrowing] = "false"
+      subtexto="Diminuição de 25%"
+      textoBotao="Baixa Estoque"
+      classeBotao="btn-danger"></app-card-generico>
+    <app-table></app-table>
+  </div>
 </app-full>

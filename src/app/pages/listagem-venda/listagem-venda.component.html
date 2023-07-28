@@ -1,6 +1,20 @@
 <app-full>
-  <p>Listagem Clientes</p>
-  <div class="card p-3 m-2">
+  <div class="container-pagina">
+    <app-card-generico
+      titulo="Vendas Cadastradas"
+      [variacao]="20"
+      subtexto="Aumento de 40%"
+      [isGrowing]="true"
+      textoBotao="Adicionar Venda"
+      classeBotao="btn-primary"
+      (clickBotao)="handleCardClick()"></app-card-generico>
+    <app-card-generico
+      titulo="Vendas Estornadas"
+      [variacao]="3"
+      [isGrowing] = "false"
+      subtexto="Diminuição de 25%"
+      textoBotao="Adicionar Estorno"
+      classeBotao="btn-danger"></app-card-generico>
     <app-tabela-venda></app-tabela-venda>
   </div>
 </app-full>

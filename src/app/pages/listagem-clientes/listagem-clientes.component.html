@@ -1,6 +1,5 @@
 <app-full>
   <div class="listagem-container mt-3">
-    <div class="cards-container mb-3">
       <app-card-generico
         titulo = "Total Clientes"
         textoBotao="Adicionar Cliente"
@@ -20,7 +19,6 @@
         [titulo]="'Clientes Devedores'"
         [classeBotao]="'btn-danger'"
         [textoBotao]="'Verificar clientes'"></app-card-generico>
-    </div>
     <app-tabela-clientes
       class="bg-white p-3 rounded-2 shadow-lg"
       [rowData]="rowData | async"></app-tabela-clientes>

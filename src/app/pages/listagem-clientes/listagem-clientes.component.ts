@@ -32,7 +32,7 @@ export class ListagemClientesComponent implements OnInit, OnDestroy{
   }
 
   public async clickHandler(){
-    await this.router.navigate(['/cadastro-cliente'])
+    await this.router.navigate(['/cliente/cadastro'])
   }
 
 }

@@ -18,32 +18,32 @@ const routes: Routes = [
       .then(m => m.SignUpComponent),
   },
   {
-    path: 'cadastro-cliente',
+    path: 'cliente/cadastro',
     loadComponent: () => import('./pages/cadastro-cliente/cadastro-cliente.component')
       .then(m => m.CadastroClienteComponent),
   },
   {
-    path: 'cadastro-produto',
+    path: 'produto/cadastro',
     loadComponent: () => import('./pages/cadastro-produto/cadastro-produto.component')
       .then(m => m.CadastroProdutoComponent),
   },
   {
-    path: 'cadastro-venda',
+    path: 'venda/cadastro',
     loadComponent: () => import('./pages/cadastro-venda/cadastro-venda.component')
       .then(m => m.CadastroVendaComponent),
   },
   {
-    path: 'listagem-cliente',
+    path: 'cliente',
     loadComponent: () => import('./pages/listagem-clientes/listagem-clientes.component')
       .then(m => m.ListagemClientesComponent),
   },
   {
-    path: 'listagem-venda',
+    path: 'venda',
     loadComponent: () => import('./pages/listagem-venda/listagem-venda.component')
       .then(m => m.ListagemVendaComponent),
   },
   {
-    path: 'listagem-produto',
+    path: 'produto',
     loadComponent: () => import('./pages/listagem-produto/listagem-produto.component')
       .then(m => m.ListagemProdutoComponent),
   }

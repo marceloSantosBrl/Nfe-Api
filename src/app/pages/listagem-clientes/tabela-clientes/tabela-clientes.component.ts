@@ -8,7 +8,7 @@ import {AgGridModule} from "ag-grid-angular";
   imports: [CommonModule, AgGridModule],
   templateUrl: './tabela-clientes.component.html',
   styleUrls: ['./tabela-clientes.component.scss'],
-  encapsulation: ViewEncapsulation.ShadowDom
+  encapsulation: ViewEncapsulation.None
 })
 export class TabelaClientesComponent {
 @Input() columnDef: any = [{

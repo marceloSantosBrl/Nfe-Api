@@ -1,10 +1,7 @@
 @import 'ag-grid-community/styles/ag-grid';
 @import 'ag-grid-community/styles/ag-theme-alpine';
 
-:host {
-    grid-column: 1 / 4;
-}
-
 ag-grid-angular {
-    height: 20rem;
+  height: 20rem;
+  width: 100%;
 }

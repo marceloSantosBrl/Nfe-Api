@@ -2,6 +2,8 @@
 
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
+@import 'ag-grid-community/styles/ag-grid';
+@import 'ag-grid-community/styles/ag-theme-alpine';
 
 :root {
     --g-24: repeat(24, minmax(0, 1fr));
@@ -35,4 +37,8 @@ router-outlet {
   ngb-offcanvas-panel {
     display: none !important;
   }
+}
+
+* {
+  font-size: 14px;
 }

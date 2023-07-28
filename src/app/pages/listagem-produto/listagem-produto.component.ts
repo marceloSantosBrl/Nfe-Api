@@ -23,7 +23,7 @@ export class ListagemProdutoComponent implements OnInit{
   }
 
   public async clickBotaoHandler(){
-    await this.router.navigate(['/cadastro-produto'])
+    await this.router.navigate(['/produto/cadastro'])
   }
 
   ngOnInit(): void {
